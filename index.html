@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>3D Mobile Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Game UI -->
+    <div id="game-ui">
+        <div id="score-display">
+            <span class="label">SCORE</span>
+            <span class="value">0</span>
+        </div>
+        <div id="time-display">
+            <span class="label">TIME</span>
+            <span class="value">60</span>
+        </div>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen">
+        <div class="content">
+            <h1>🎮 CUBE RUNNER 3D</h1>
+            <p>Collect golden cubes to score!</p>
+            <button class="btn-primary" onclick="startGame()">PLAY</button>
+            <div class="instructions">
+                <p>📱 Use joystick to move</p>
+                <p>⭐ Collect golden cubes</p>
+                <p>⏱️ Beat the timer!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over" class="screen hidden">
+        <div class="content">
+            <h2>GAME OVER!</h2>
+            <div class="final-score">
+                <span>Final Score</span>
+                <span id="final-score-value">0</span>
+            </div>
+            <button class="btn-primary" onclick="restartGame()">PLAY AGAIN</button>
+            <button class="btn-secondary" onclick="showMenu()">MENU</button>
+        </div>
+    </div>
+
+    <!-- Mobile Controls -->
+    <div id="mobile-controls" class="hidden">
+        <!-- Joystick -->
+        <div id="joystick-container">
+            <div id="joystick-base">
+                <div id="joystick-stick"></div>
+            </div>
+        </div>
+        
+        <!-- Jump Button -->
+        <button id="jump-btn" class="action-btn">JUMP</button>
+        
+        <!-- Pause Button -->
+        <button id="pause-btn" onclick="togglePause()">⏸️</button>
+    </div>
+
+    <!-- Canvas will be inserted here by Three.js -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+          </html>
